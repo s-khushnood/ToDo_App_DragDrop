@@ -1,0 +1,21 @@
+<div class="container-fluid w-50">
+    <div>
+        <mat-card style="background-color:lightblue;" class="py-3">
+            <form [formGroup]="todoform">
+                <mat-form-field class="w-75 container-fluid mx-5" appearance="fill">
+                    <mat-label>Enter Task</mat-label>
+                    <input formControlName="item" matInput placeholder="Enter Your Task">
+                    <mat-icon *ngIf="todoform.invalid" matSuffix>sentiment_satisfied</mat-icon>
+                    <mat-icon *ngIf="!todoform.invalid" matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="w-75 container-fluid mx-5" appearance="fill">
+                    <mat-label>Add ExpiryTime (minutes)</mat-label>
+                    <input formControlName="time" matInput type="number">
+                </mat-form-field>
+                <div class="d-flex justify-content-center py-3">
+                    <button mat-fab (click)="addtask()" [disabled]="todoform.invalid||todoform.value.time<0" color="accent"><mat-icon>add</mat-icon></button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

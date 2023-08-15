@@ -1,0 +1,26 @@
+<app-addtask (addtaskinlist)="addtaskinlist($event)"></app-addtask>
+<div class="container mt-3">
+    <div cdkDropListGroup>
+        <div class=" row ">
+            <div class="col">
+                <div>
+                    <h2 class="headtitle">To do<span *ngIf="tasks.length>0">-{{tasks.length}}</span></h2>
+                    <div cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div *ngFor="let item of tasks;let i=index" cdkDrag>
+                            <app-todoitem  class="example-box d-flex justify-content-between" style="border: 1px solid black;border-radius: 5;" [item]="item" [i]="i"  (deletefromtodolist)="deletefromtodolist($event)" (updatetaskinlist)="updatetaskinlist($event)" (completetaskinlist)="completetaskinlist($event)"></app-todoitem>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div >
+                    <h2 class="headtitle">Done<span *ngIf="done.length>0">-{{done.length}}</span></h2>
+                    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div *ngFor="let item of done;let i=index" cdkDrag>
+                            <app-doneitem [i]="i" [item]="item" style="background-color: yellowgreen; font-size: large; border: 1px solid black; border-radius: 5;" (deletefromdonelist)="deletefromdonelist($event)" (incompletetaskinlist)="incompletetaskinlist($event)" class="example-box d-flex justify-content-between"></app-doneitem>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
