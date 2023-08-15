@@ -44,7 +44,6 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     DragDropModule,
     ToastrModule.forRoot({ timeOut: 3000,
-      positionClass: 'toast-bottom-center',
     progressBar:true}),
   ],
   providers: [],
