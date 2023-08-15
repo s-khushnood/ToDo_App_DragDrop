@@ -1,7 +1,6 @@
 import { Component,EventEmitter,OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { Itask } from '../Itask';
-import { __values } from 'tslib';
 @Component({
   selector: 'app-addtask',
   templateUrl: './addtask.component.html',

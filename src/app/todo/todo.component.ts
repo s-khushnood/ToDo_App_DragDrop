@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormGroup} from '@angular/forms'
 import { Itask } from '../Itask';
 import { ToastrService } from 'ngx-toastr';
-import { findIndex } from 'rxjs';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
